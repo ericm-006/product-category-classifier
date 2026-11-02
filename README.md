@@ -44,7 +44,7 @@ product-category-classifier/
 │   └── product_category_model.pkl
 ├── notebooks/
 │   └── product_category_classification.ipynb
-├── IMLP6_TASK_03-products.csv
+├── products.csv
 ├── predict_category.py
 ├── train_model.py
 └── README.md
