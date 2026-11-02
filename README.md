@@ -1,47 +1,32 @@
 # Product Category Classifier
 
-## Project Overview
-
-This project uses Machine Learning and Natural Language Processing (NLP) to automatically classify products into one of 10 categories based on their titles.
-
-The model analyzes product titles and predicts the most appropriate product category.
+## Overview
+A Machine Learning project that automatically classifies products into 10 categories based on their titles using Natural Language Processing (NLP).
 
 ## Dataset
-
-The dataset contains 35,311 product records and includes product titles, category labels, merchant information, ratings, views, and listing dates.
-
-After data cleaning, 35,096 records were retained across 10 product categories.
+- Original dataset: 35,311 records.
+- Cleaned dataset: 35,096 records.
+- Number of categories: 10.
 
 ## Data Preprocessing
-
-The following preprocessing steps were performed:
-
 - Removed records with missing product titles or category labels.
-- Removed unnecessary whitespace.
 - Standardized category names.
 - Converted text to lowercase.
-- Removed special characters.
-- Prepared product titles for TF-IDF vectorization.
+- Removed special characters and extra whitespace.
 
 ## Feature Engineering
-
-TF-IDF (Term Frequency–Inverse Document Frequency) was used to convert product titles into numerical features.
-
-Configuration:
+TF-IDF vectorization was used with:
 - Unigrams and bigrams
 - Maximum 20,000 features
 - Minimum document frequency of 2
 - Sublinear term frequency scaling
 
-## Machine Learning Models
-
-Three classification algorithms were compared:
-
+## Models Compared
 1. Logistic Regression
 2. Linear Support Vector Machine (Linear SVM)
 3. Multinomial Naive Bayes
 
-### Model Evaluation
+## Results
 
 | Model | Accuracy |
 |---|---:|
@@ -49,48 +34,54 @@ Three classification algorithms were compared:
 | Linear SVM | 96.42% |
 | Multinomial Naive Bayes | 96.17% |
 
-Linear SVM achieved the highest accuracy and was selected as the final model.
-
-## Final Model
-
-The trained model is saved as:
-
-`models/product_category_model.pkl`
-
-The model includes the TF-IDF vectorizer and Linear SVM classifier in a single pipeline.
+**Linear SVM** was selected as the final model.
 
 ## Project Structure
 
 ```text
 product-category-classifier/
-│
-├── data/
 ├── models/
 │   └── product_category_model.pkl
-│
 ├── notebooks/
 │   └── product_category_classification.ipynb
-│
+├── IMLP6_TASK_03-products.csv
 ├── predict_category.py
 ├── train_model.py
-├── IMLP6_TASK_03-products.csv
 └── README.md
 ```
 
 ## Installation
 
-Install the required Python libraries:
-
 ```bash
 pip install pandas scikit-learn joblib
 ```
 
-## Training the Model
-
-Run:
+## Train the Model
 
 ```bash
 python train_model.py
 ```
 
-The script
+The script trains and evaluates the Linear SVM model and saves it in the `models` folder.
+
+## Predict Product Categories
+
+```bash
+python predict_category.py
+```
+
+Enter a product title when prompted. The program displays the predicted category. Type `exit` to quit.
+
+## Technologies
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- TF-IDF
+- Linear SVM
+- Joblib
+- Google Colab
+- GitHub
+
+## Conclusion
+The final Linear SVM model achieved 96.42% accuracy on the test dataset. The project demonstrates data preprocessing, feature engineering, model comparison, evaluation, model saving, and interactive prediction.
