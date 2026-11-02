@@ -11,7 +11,7 @@ from sklearn.svm import LinearSVC
 from sklearn.metrics import accuracy_score, classification_report
 
 
-DATA_PATH = "data/products.csv"
+DATA_PATH = "IMLP6_TASK_03-products.csv"
 MODEL_PATH = "models/product_category_model.pkl"
 
 
